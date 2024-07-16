@@ -3,7 +3,7 @@ import { Header } from "@/components/header/Header";
 
 export default function Home() {
   return (
-    <main>
+    <main className="h-full">
       <Header />
       <Carousel />
     </main>

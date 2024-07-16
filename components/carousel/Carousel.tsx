@@ -15,36 +15,39 @@ export const Carousel = () => {
 
   return (
     <>
-      <Swiper
-      className="h-[100vh] flex justify-center items-center"
-        slidesPerView={1}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        spaceBetween={50}
-        loop={true}
-        breakpoints={{
-          1280: {
-            slidesPerView: 3,
-          },
-          768: {
-            slidesPerView: 2,
-          }
-        }}
-      >
-        <SwiperSlide className="bg-[#101010] w-full h-full">1
-        </SwiperSlide>
-        <SwiperSlide className="bg-[#202020] w-full h-full">2
-        </SwiperSlide>
-        <SwiperSlide className="bg-[#303030] w-full h-full">3
-        </SwiperSlide>
-        <SwiperSlide className="bg-[#404040] w-full h-full">4
-        </SwiperSlide>
-        <SwiperSlide className="bg-[#505050] w-full h-full">5
-        </SwiperSlide>
+      <section className="flex justify-center items-center w-full h-full bg-[#3E475C]">
 
-      </Swiper >
+        <Swiper
+          className="h-[70vh] w-[90vw] flex justify-center items-center"
+          slidesPerView={1}
+          navigation={true}
+          pagination={{
+            clickable: true,
+          }}
+          spaceBetween={100}
+          loop={true}
+          breakpoints={{
+            1280: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 2,
+            }
+          }}
+        >
+          <SwiperSlide className="bg-[#101010] shadow-card_carousel">
+          </SwiperSlide>
+          <SwiperSlide className="bg-[#202020] shadow-card_carousel">
+          </SwiperSlide>
+          <SwiperSlide className="bg-[#303030] shadow-card_carousel">
+          </SwiperSlide>
+          <SwiperSlide className="bg-[#404040] shadow-card_carousel">
+          </SwiperSlide>
+          <SwiperSlide className="bg-[#505050] shadow-card_carousel">
+          </SwiperSlide>
+
+        </Swiper >
+      </section>
     </>
   );
 }
