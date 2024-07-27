@@ -15,10 +15,12 @@ export const Carousel = () => {
 
   return (
     <>
-      <section className="flex justify-center items-center w-full h-full bg-[#3E475C]">
-
+      <section className="carouselSection">
+        {/* <h1 className="lastClients">
+          Últimos projetos
+        </h1> */}
         <Swiper
-          className="h-[70vh] w-[90vw] flex justify-center items-center"
+          className="carousel"
           slidesPerView={1}
           navigation={true}
           pagination={{
@@ -27,23 +29,23 @@ export const Carousel = () => {
           spaceBetween={100}
           loop={true}
           breakpoints={{
-            1280: {
-              slidesPerView: 3,
-            },
-            768: {
-              slidesPerView: 2,
-            }
+            // 1280: {
+            //   slidesPerView: 3,
+            // },
+            // 768: {
+            //   slidesPerView: 2,
+            // }
           }}
         >
-          <SwiperSlide className="bg-[#101010] shadow-card_carousel">
+          <SwiperSlide className="carouselItem">
           </SwiperSlide>
-          <SwiperSlide className="bg-[#202020] shadow-card_carousel">
+          <SwiperSlide className="carouselItem">
           </SwiperSlide>
-          <SwiperSlide className="bg-[#303030] shadow-card_carousel">
+          <SwiperSlide className="carouselItem">
           </SwiperSlide>
-          <SwiperSlide className="bg-[#404040] shadow-card_carousel">
+          <SwiperSlide className="carouselItem">
           </SwiperSlide>
-          <SwiperSlide className="bg-[#505050] shadow-card_carousel">
+          <SwiperSlide className="carouselItem">
           </SwiperSlide>
 
         </Swiper >

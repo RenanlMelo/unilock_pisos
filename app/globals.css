@@ -2,6 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    height: 100vh;
+:root {
+  --white-f: #fff;
+  --white-f-50: #ffffff50;
+  --black-0: #000;
+  --primary: #edae00;
+  --primary-darken: #b48400;
+  --secondary: #edae00;
+  
+  --text-f: #fff;
+  --text-primary: #ffc117;
+  --text-02: #020205;
+
+  --header: #000;
 }
+
+html,
+body {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* - Header - */
+.header {
+  @apply grid grid-cols-4 justify-between items-center px-[3vw] py-[3vh] fixed w-full bg-transparent z-10;
+}
+
+.logo_div {
+  @apply flex justify-start items-center gap-x-3;
+}
+
+.logo {
+  @apply w-10 h-10;
+}
+
+.logo_title {
+  @apply text-xl text-white;
+}
+
+.navbar {
+  @apply flex justify-center items-center gap-x-6 col-start-2 col-span-2;
+}
+
+.navItem {
+  @apply text-lg text-[var(--text-f)] 2xl:text-xl transition duration-100 after:block after:h-[2px] after:bg-[var(--text-f)] after:w-full after:scale-x-0 after:hover:scale-x-110 after:transition after:duration-300 after:origin-center after:translate-y-px;
+}
+
+.contactButton {
+  @apply text-right text-xl font-bold text-[var(--text-f)] bg-[var(--primary)] hover:bg-[var(--primary-darken)] border-2 border-transparent hover:border-[var(--primary)] shadow-[1px_2px_5px_#00000060] hover:shadow-[1px_2px_10px_#00000080] w-fit place-self-end px-4 py-2 rounded-3xl duration-200;
+}
+
+/* Inicio */
+.inicioDiv {
+  @apply w-full h-[100vh] relative;
+}
+
+.shadow:nth-child(1) {
+  @apply bg-gradient-to-b from-black to-transparent w-full h-1/2 absolute top-0;
+}
+.shadow:nth-child(2) {
+  @apply bg-gradient-to-t from-black to-transparent w-full h-1/2 absolute bottom-0;
+}
+
+.inicioSection {
+  @apply w-full h-[100vh] p-40 grid justify-center items-center bg-[url(/image_bg2.jpg)] aspect-auto bg-center bg-cover bg-no-repeat;
+}
+
+.leftSection {
+  @apply flex flex-col justify-evenly items-center h-full z-10;
+}
+
+.title {
+  @apply text-[5vw] font-bold text-[var(--text-f)];
+}
+
+.subtitle {
+  @apply text-[3vw] font-semibold text-[var(--text-primary)] -translate-y-6 mx-auto text-center;
+}
+
+.buttonsDiv {
+  @apply flex flex-col gap-y-10;
+}
+
+.button1 {
+  @apply bg-[var(--primary)] text-lg rounded-md w-[14vw] h-[6vh] border border-transparent text-black hover:text-white hover:bg-[var(--primary-darken)] duration-300 shadow-[0_5px_15px_-7px_var(--primary)] hover:shadow-[0_5px_30px_-5px_var(--primary-darken)];
+}
+
+.button2 {
+  @apply border border-white/70 text-lg rounded-md w-[14vw] h-[6vh] text-white/70 hover:text-[var(--text-f)] hover:border-[var(--white-f)] duration-300 shadow-[0_5px_30px_-5px_var(--white-f-50)] hover:shadow-[0_5px_20px_-7px_var(--white-f)];
+}
+
+.rightSection {
+  @apply flex flex-col justify-center items-end h-full z-10;
+}
+
+/* .itemsDiv {
+  @apply border border-white/50 relative h-[100%] w-[50%] flex flex-col justify-center items-center gap-y-10 px-32;
+}
+
+.item {
+  @apply bg-white/40 h-[15%] w-[75%];
+} */
+
+/* - Carousel -
+.carouselSection {
+  @apply flex flex-col justify-center items-center w-full h-full bg-[var(--secondary)] px-32;
+}
+
+.lastClients {
+  @apply w-full text-start px-16 py-8 text-[2.5vw] text-[var(--white-f)] font-bold;
+}
+
+.carousel {
+  @apply h-[40vh] w-full flex justify-center items-center;
+}
+
+.carouselItem {
+  @apply bg-[#101010] shadow-card_carousel;
+}
+ */
+
+/* ClientsCarousel  */
+.slide {
+  @apply border border-black w-[80vw] relative h-16 mx-auto;
+}
+
+.client {
+  @apply w-64 h-16 bg-red-700 absolute left-full;
+  animation: xLoop 3s linear infinite;
+}
+
+@keyframes xLoop {
+  to {
+    left: 0;
+
+  }
+}
+
+/* ClientsCarousel
+.clients {
+  @apply w-[100vw] overflow-hidden flex p-10;
+}
+
+.slide {
+  @apply whitespace-nowrap flex;
+  animation: xLoop 20s linear infinite;
+}
+
+.client {
+  @apply flex justify-center items-center;
+  height: 100px;
+  width: 200px;
+  background: var(--primary);
+}
+
+@keyframes xLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+} */
