@@ -1,8 +1,17 @@
+import Image from "next/image";
 import React from "react";
 
 export const Inicio = () => {
   return (
     <div className="inicioDiv">
+      <Image
+        src="/image_bg2.jpg"
+        alt="background image"
+        width={1920}
+        height={1080}
+        className="background_image"
+        loading="eager"
+      />
       <div className="shadow" />
       <div className="shadow" />
       <section className="inicioSection">

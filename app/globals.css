@@ -57,15 +57,19 @@ body {
   @apply w-full h-[100vh] relative;
 }
 
-.shadow:nth-child(1) {
+.shadow:nth-child(even) {
   @apply bg-gradient-to-b from-black to-transparent w-full h-1/2 absolute top-0;
 }
-.shadow:nth-child(2) {
+.shadow:nth-child(odd) {
   @apply bg-gradient-to-t from-black to-transparent w-full h-1/2 absolute bottom-0;
 }
 
 .inicioSection {
-  @apply w-full h-[100vh] p-40 grid justify-center items-center bg-[url(/image_bg2.jpg)] aspect-auto bg-center bg-cover bg-no-repeat;
+  @apply w-full h-[100vh] p-40 grid;
+}
+
+.background_image {
+  @apply w-full h-full absolute;
 }
 
 .leftSection {
