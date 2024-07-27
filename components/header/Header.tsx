@@ -24,7 +24,7 @@ export const Header = () => {
       </div>
       <nav className="navbar">
         {navbarItems.map((item, index) => (
-          <Link href={item.href} className="navItem">
+          <Link key={index} href={item.href} className="navItem">
             {item.name}
           </Link>
         ))}
