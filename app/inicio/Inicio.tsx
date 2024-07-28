@@ -5,13 +5,14 @@ export const Inicio = () => {
   return (
     <div className="inicioDiv">
       <Image
-        src="/image_bg2.jpg"
+        src="/image_bg.jpeg"
         alt="background image"
         width={1920}
         height={1080}
         className="background_image"
         loading="eager"
       />
+      <span className="filter" />
       <div className="shadow" />
       <div className="shadow" />
       <section className="inicioSection">

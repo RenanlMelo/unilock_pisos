@@ -23,7 +23,7 @@ export default function Home() {
       <Header />
       <Inicio />
       {/* <Carousel /> */}
-      <ClientsCarousel />
+      {/* <ClientsCarousel /> */}
     </main>
   );
 }
