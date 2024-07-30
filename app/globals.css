@@ -101,7 +101,28 @@ body {
 
 /* Sobre  */
 .sobre_section {
-  @apply bg-[#aaa] w-full h-full;
+  @apply bg-[#aaa] w-full h-full flex justify-center items-center;
+}
+
+.sobre_background_image {
+  @apply bg-contain bg-bottom absolute h-[100vh];
+}
+
+.sobre_filter {
+  @apply w-full h-full absolute aspect-video bg-yellow-500/10 shadow-custom-double;
+}
+
+.sobre_div {
+  @apply w-1/2 bg-white/50 z-10 flex flex-col gap-y-10 justify-center items-center;
+
+  & p,
+  ul {
+    @apply text-white;
+  }
+
+  & ul {
+    @apply list-disc ;
+  }
 }
 
 /* Contato */
