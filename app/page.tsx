@@ -1,11 +1,9 @@
-import { Carousel } from "@/components/carousel/Carousel";
-import { Clients } from "@/components/clients/Clients";
-import { ClientsCarousel } from "@/components/clients/ClientsCarousel";
 import { Header } from "@/components/header/Header";
+import { Inicio } from "./inicio/Inicio";
+import { Servicos } from "@/components/services/Servicos";
 
 import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
-import { Inicio } from "./inicio/Inicio";
 
 const mainFontFamily = Roboto({
   weight: ["100", "300", "500", "700", "900"],
@@ -22,6 +20,7 @@ export default function Home() {
     <main className="h-[100vh] flex flex-col justify-between items-center bg-[#fff]">
       <Header />
       <Inicio />
+      <Servicos />
       {/* <Carousel /> */}
       {/* <ClientsCarousel /> */}
     </main>

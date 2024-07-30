@@ -1,7 +1,12 @@
-import React from 'react'
+import { About } from "@/components/about/About";
+import { Header } from "@/components/header/Header";
+import React from "react";
 
 export default function page() {
   return (
-    <div>page sobre</div>
-  )
+    <>
+      <Header />
+      <About />
+    </>
+  );
 }

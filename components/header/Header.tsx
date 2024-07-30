@@ -4,7 +4,7 @@ import React from "react";
 
 export const Header = () => {
   const navbarItems = [
-    { name: "Início", id: "inicio", href: "" },
+    { name: "Início", id: "inicio", href: "/" },
     { name: "Serviços", id: "servicos", href: "servicos" },
     { name: "Obras", id: "obras", href: "obras" },
     { name: "Sobre", id: "sobre", href: "sobre" },

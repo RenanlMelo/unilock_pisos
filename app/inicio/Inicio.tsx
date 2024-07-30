@@ -3,28 +3,26 @@ import React from "react";
 
 export const Inicio = () => {
   return (
-    <div className="inicioDiv">
+    <div className="inicio_div">
       <Image
         src="/image_bg.jpeg"
         alt="background image"
         width={1920}
         height={1080}
-        className="background_image"
+        className="inicio_background_image"
         loading="eager"
       />
-      <span className="filter" />
-      <div className="shadow" />
-      <div className="shadow" />
-      <section className="inicioSection">
-        <div className="leftSection">
-          <div>
-            <h1 className="title">Unilock Pisos</h1>
-            <h2 className="subtitle">Intertravados</h2>
-          </div>
-          <div className="buttonsDiv">
-            <button className="button1">Serviços</button>
-            <button className="button2">Sobre nós</button>
-          </div>
+      <span className="inicio_filter" />
+      <div className="inicio_shadow" />
+      <div className="inicio_shadow" />
+      <section className="inicio_section">
+        <div>
+          <h1 className="inicio_title">Unilock Pisos</h1>
+          <h2 className="inicio_subtitle">Intertravados</h2>
+        </div>
+        <div className="inicio_buttons_div">
+          <button className="inicio_button1">Serviços</button>
+          <button className="inicio_button2">Sobre nós</button>
         </div>
       </section>
     </div>

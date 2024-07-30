@@ -9,12 +9,17 @@
   --primary: #edae00;
   --primary-darken: #b48400;
   --secondary: #edae00;
-  
+
   --text-f: #fff;
   --text-primary: #ffc117;
   --text-02: #020205;
 
   --header: #000;
+
+  /* Form */
+  --form-inputColor: #edae00;
+  --form-inputSelectedColor: rgb(10, 10, 10);
+  --form-selectText: #9ca3af;
 }
 
 html,
@@ -53,122 +58,148 @@ body {
 }
 
 /* Inicio */
-.inicioDiv {
+.inicio_div {
   @apply w-full h-[100vh] relative;
 }
 
-.shadow:nth-child(even) {
-  @apply bg-gradient-to-b from-black to-transparent w-full h-1/2 absolute top-0;
-}
-.shadow:nth-child(odd) {
-  @apply bg-gradient-to-t from-black to-transparent w-full h-1/2 absolute bottom-0;
+.inicio_section {
+  @apply w-full h-[100vh] p-40 overflow-hidden relative flex flex-col justify-evenly items-center;
 }
 
-.inicioSection {
-  @apply w-full h-[100vh] p-40 grid;
+.inicio_background_image {
+  @apply bg-contain bg-center absolute h-[100vh];
 }
 
-.background_image {
-  @apply w-full h-full absolute aspect-video;
+.inicio_filter {
+  @apply w-full h-full absolute aspect-video bg-blue-500/10 shadow-custom-double;
 }
 
-.filter {
-  @apply w-full h-full absolute aspect-video bg-blue-500/10;
-}
-
-.leftSection {
-  @apply flex flex-col justify-evenly items-center h-full z-10;
-}
-
-.title {
+.inicio_title {
   @apply text-[5vw] font-bold text-[var(--text-f)] drop-shadow-[0_0_2px_#000];
 }
 
-.subtitle {
+.inicio_subtitle {
   @apply text-[3vw] font-semibold text-[var(--text-primary)] -translate-y-6 mx-auto text-center;
 }
 
-.buttonsDiv {
+.inicio_buttons_div {
   @apply flex flex-col gap-y-10;
 }
 
-.button1 {
-  @apply bg-[var(--primary)] text-lg rounded-md w-[14vw] h-[6vh] border border-transparent text-black hover:text-white hover:bg-[var(--primary-darken)] duration-300 shadow-[0_5px_15px_-7px_var(--primary)] hover:shadow-[0_5px_30px_-5px_var(--primary-darken)];
+.inicio_button1 {
+  @apply bg-[var(--primary)] text-lg rounded-md w-[14vw] h-[6vh] border border-transparent text-black hover:text-white hover:bg-[var(--primary-darken)] duration-300 shadow-[0_5px_15px_-7px_var(--primary)] hover:shadow-[0_5px_20px_0px_var(--primary-darken)];
 }
 
-.button2 {
+.inicio_button2 {
   @apply border border-white/70 text-lg rounded-md w-[14vw] h-[6vh] text-white/70 hover:text-[var(--text-f)] hover:border-[var(--white-f)] duration-300 shadow-[0_5px_30px_-5px_var(--white-f-50)] hover:shadow-[0_5px_20px_-7px_var(--white-f)];
 }
 
-.rightSection {
-  @apply flex flex-col justify-center items-end h-full z-10;
-}
-
-/* .itemsDiv {
-  @apply border border-white/50 relative h-[100%] w-[50%] flex flex-col justify-center items-center gap-y-10 px-32;
-}
-
-.item {
-  @apply bg-white/40 h-[15%] w-[75%];
-} */
-
-/* - Carousel -
-.carouselSection {
-  @apply flex flex-col justify-center items-center w-full h-full bg-[var(--secondary)] px-32;
-}
-
-.lastClients {
-  @apply w-full text-start px-16 py-8 text-[2.5vw] text-[var(--white-f)] font-bold;
-}
-
-.carousel {
-  @apply h-[40vh] w-full flex justify-center items-center;
-}
-
-.carouselItem {
-  @apply bg-[#101010] shadow-card_carousel;
-}
- */
-
-/* ClientsCarousel  */
-.slide {
-  @apply border border-black w-[80vw] relative h-16 mx-auto;
-}
-
-.client {
-  @apply w-64 h-16 bg-red-700 absolute left-full;
-  animation: xLoop 3s linear infinite;
-}
-
-@keyframes xLoop {
-  to {
-    left: 0;
-
-  }
-}
-
-/* ClientsCarousel
-.clients {
-  @apply w-[100vw] overflow-hidden flex p-10;
-}
-
-.slide {
-  @apply whitespace-nowrap flex;
-  animation: xLoop 20s linear infinite;
-}
-
-.client {
+/* Serviços */
+.servicos_section {
   @apply flex justify-center items-center;
-  height: 100px;
-  width: 200px;
-  background: var(--primary);
 }
 
-@keyframes xLoop {
-  from {
-    transform: translateX(0);
+/* Sobre  */
+.sobre_section {
+  @apply bg-[#aaa] w-full h-full;
+}
+
+/* Contato */
+.contato_section {
+  @apply flex justify-center items-center w-full h-full overflow-hidden;
+}
+
+.contato_bg_image {
+  @apply absolute bg-contain -z-50;
+}
+
+.contato_filter {
+  @apply w-full h-full absolute aspect-video bg-blue-500/10 shadow-custom-double;
+}
+
+.contato_informations {
+  @apply bg-[#101010] flex flex-col border border-black/50 border-r-0 justify-between items-start w-1/4 h-2/3 p-12 gap-y-4 rounded-l-2xl z-10 relative;
+
+  & h3 {
+    @apply text-2xl text-white;
   }
-  to {
-    transform: translateX(-100%);
+
+  & p {
+    @apply text-lg text-white;
   }
-} */
+
+  & p strong {
+    @apply text-[var(--primary)];
+  }
+}
+
+.contato_informations span {
+  @apply text-white/70 text-3xl absolute top-1/2 -translate-y-1/2;
+}
+
+.contato_midia {
+  @apply w-full flex justify-start gap-x-2 items-center;
+}
+
+.contato_midia {
+  transition: all 0.5s;
+  fill: #ccc;
+
+  & svg:nth-child(1):hover {
+    fill: #25de66;
+    transition: 0.5s all;
+  }
+  & svg:nth-child(2):hover {
+    fill: #3b5998;
+    transition: 0.5s all;
+  }
+}
+
+.contato_logo {
+  @apply object-contain w-[90%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10;
+}
+
+.contato_form {
+  @apply w-1/3 h-2/3 flex flex-col gap-y-10 justify-center items-center rounded-r-2xl px-24 z-10 border border-black/50 border-l-0 backdrop-blur;
+}
+
+.contato_smaller_form {
+  @apply flex justify-between items-center;
+}
+
+.contato_smaller_form input {
+  @apply w-[calc(45%)] bg-[#101010] text-white px-4 py-2 rounded-lg outline-none duration-300 shadow-[3px_4px_10px_#00000050];
+}
+
+.contato_form input {
+  @apply w-[calc(100%)] bg-[#101010] text-white px-4 py-2 rounded-lg outline-none duration-300 shadow-[3px_4px_10px_#00000050];
+  /* @apply w-[calc(100%-80px)] px-4 py-2 bg-[var(--text-f)] text-[var(--text-f)] rounded-lg text-lg outline-none duration-300 shadow-[0_4px_10px_rgba(0,0,0,.5)] focus:bg-[var(--form-inputColor)] focus:text-[var(--text-light)] focus:shadow-[0_4px_10px_rgba(94,0,218,.55)]; */
+}
+
+.contato_form textarea {
+  @apply w-[calc(100%)] bg-[#101010] text-white h-32 px-4 py-2 rounded-lg outline-none resize-none;
+}
+
+.contato_submit {
+  @apply bg-[var(--primary)] w-[calc(100%)] px-4 py-2 rounded-lg hover:text-[var(--primary)] hover:bg-[#101010] duration-500;
+}
+
+/* ===== Scrollbar CSS ===== */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #323232 #0a0a0a;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #323232;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
