@@ -5,20 +5,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export const Header = () => {
-  const [path, setPath] = useState("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setPath(window.location.pathname);
-      if (path === "/sobre") {
-        const headerColor = document.getElementsByClassName("header");
-
-        if (headerColor !== null) {
-        }
-      }
-    }
-  }, []);
-
   const navbarItems = [
     { name: "Início", id: "inicio", href: "/" },
     { name: "Serviços", id: "servicos", href: "servicos" },
