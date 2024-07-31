@@ -20,6 +20,25 @@
   --form-inputColor: #edae00;
   --form-inputSelectedColor: rgb(10, 10, 10);
   --form-selectText: #9ca3af;
+
+  --clr-1-red: 237;
+  --clr-1-green: 174;
+  --clr-1-blue: 0;
+  --clr-2-opacity: 0.05;
+  --clr-3-opacity: 0.01;
+  --clr-1: rgb(var(--clr-1-red), var(--clr-1-green), var(--clr-1-blue));
+  --clr-2: rgba(
+    var(--clr-1-red),
+    var(--clr-1-green),
+    var(--clr-1-blue),
+    var(--clr-2-opacity)
+  );
+  --clr-3: rgba(
+    var(--clr-1-red),
+    var(--clr-1-green),
+    var(--clr-1-blue),
+    var(--clr-3-opacity)
+  );
 }
 
 html,
@@ -30,7 +49,7 @@ body {
 
 /* - Header - */
 .header {
-  @apply grid grid-cols-4 justify-between items-center px-[3vw] py-[3vh] fixed w-full bg-transparent z-10;
+  @apply grid grid-cols-4 bg-black justify-between items-center px-[3vw] py-[3vh] fixed w-full z-10;
 }
 
 .logo_div {
@@ -96,33 +115,106 @@ body {
 
 /* Serviços */
 .servicos_section {
-  @apply flex justify-center items-center;
+  @apply flex  justify-center items-center;
 }
 
 /* Sobre  */
 .sobre_section {
-  @apply bg-[#aaa] w-full h-full flex justify-center items-center;
+  @apply text-[#000] w-full h-full flex flex-col justify-start items-center;
+
+  & .sobre_div_title {
+    @apply text-6xl font-bold w-full h-72 text-center p-8 flex justify-center items-end;
+  }
 }
 
-.sobre_background_image {
-  @apply bg-contain bg-bottom absolute h-[100vh];
-}
+.sobre_div_content {
+  @apply w-[55%] flex flex-col gap-y-10 justify-center items-center p-8;
 
-.sobre_filter {
-  @apply w-full h-full absolute aspect-video bg-yellow-500/10 shadow-custom-double;
-}
+  & .sobre_texto1 {
+    @apply h-full text-xl font-light flex justify-center items-center;
 
-.sobre_div {
-  @apply w-1/2 bg-white/50 z-10 flex flex-col gap-y-10 justify-center items-center;
+    & p {
+      @apply px-4;
+    }
 
-  & p,
-  ul {
-    @apply text-white;
+    & h4 {
+      @apply p-8 text-4xl font-medium;
+    }
+
+    & .sobre_image {
+      @apply rounded-2xl shadow-[3px_5px_15px_#30003080];
+    }
   }
 
-  & ul {
-    @apply list-disc ;
+  & .sobre_dados {
+    @apply flex justify-evenly items-center w-full mt-12 mb-6;
+
+    & div {
+      @apply flex flex-col justify-center items-center gap-y-4 text-xl;
+    }
+
+    & h5 {
+      @apply text-3xl text-[var(--primary-darken)];
+    }
+
+    & .sobre_dado_span {
+      @apply rounded-full w-[10vw] aspect-square p-12 bg-white relative flex justify-center items-center;
+      animation: spin 3s all infinite linear;
+    }
   }
+
+  & .sobre_texto2 {
+    @apply h-full font-light flex flex-col justify-center items-start;
+
+    & h4 {
+      @apply p-8 text-2xl font-medium;
+    }
+
+    & ul {
+      @apply px-4 list-disc text-xl;
+    }
+  }
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+.sobre_dado_span::before {
+  @apply rounded-full w-[100%] aspect-square bg-white absolute;
+  content: "";
+  z-index: -1;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1)
+  );
+  animation: spin 6s linear infinite;
+  border-radius: 50%;
+}
+
+.sobre_logo {
+  @apply absolute w-[20vw] top-1/3 left-0 aspect-square z-50;
+}
+
+.sobre_big_logo {
+  @apply absolute w-[75vw] -translate-x-1/2 -translate-y-1/4 top-0 left-0 aspect-square -z-50;
 }
 
 /* Contato */

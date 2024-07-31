@@ -1,33 +1,67 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const About = () => {
   return (
     <>
       <section className="sobre_section">
-        <Image
-          src="/sobre_image.png"
-          alt="image de fundo"
-          width={1920}
-          height={1080}
-          className="sobre_background_image"
-        />
-        <span className="sobre_filter" />
+        {/* <Image
+          src="/image_yellow_logo.png"
+          alt="logo"
+          width={1000}
+          height={1000}
+          className="sobre_logo"
+        /> */}
 
-        <h3>Sobre Nós</h3>
-        <div className="sobre_div">
-          <p>
-            A Unilock Pisos está a 23 anos no mercado de instalações de pisos
-            intertravados, 10 anos no Sul da Florida (EUA) e agora 13 anos no
-            Brasil se tornando a maior e mais importante deste setor, agora
-            localizada em Sorocaba e atendendo toda região, pretendemos manter a
-            mesma qualidade nas instalações de pisos intertravados.
-          </p>
-          <div>
-            <p>
+        <div className="sobre_div_title">
+          <h3>Sobre Nós</h3>
+        </div>
+        <div className="sobre_div_content">
+          <div className="sobre_texto1">
+            <div>
+              <h4>Nossa História</h4>
+              <p>
+                A Unilock Pisos está a 23 anos no mercado de instalações de
+                pisos intertravados, 10 anos no Sul da Florida (EUA) e agora 13
+                anos no Brasil se tornando a maior e mais importante deste
+                setor, agora localizada em Sorocaba e atendendo toda região,
+                pretendemos manter a mesma qualidade nas instalações de pisos
+                intertravados.
+              </p>
+            </div>
+            <Image
+              src="/sobre_image.png"
+              alt="Image"
+              width={400}
+              height={400}
+              className="sobre_image"
+            />
+          </div>
+          <div className="sobre_dados">
+            <div>
+              <span className="sobre_dado_span">
+                <h5>23+</h5>
+              </span>
+              <p>Anos no mercado</p>
+            </div>
+            <div>
+              <span className="sobre_dado_span">
+                <h5>1000+</h5>
+              </span>
+              <p> Obras concluidas</p>
+            </div>
+            <div>
+              <span className="sobre_dado_span">
+                <h5>500.000+</h5>
+              </span>
+              <p> M2 de pisos instalados</p>
+            </div>
+          </div>
+          <div className="sobre_texto2">
+            <h4>
               Se você está pensando em construir ou reformar, não deixe de nos
               consultar.
-            </p>
+            </h4>
             <ul>
               <li>
                 Nossos profissionais são altamente qualificados para realizar
