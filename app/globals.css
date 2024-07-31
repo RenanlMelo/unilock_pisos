@@ -131,10 +131,10 @@ body {
   @apply w-[calc(55%+100px)] flex flex-col gap-y-10 justify-center items-center p-8;
 
   & .sobre_texto1 {
-    @apply h-full text-xl font-light flex justify-center items-center;
+    @apply h-full flex justify-center items-center;
 
     & p {
-      @apply px-4;
+      @apply px-4 text-xl font-light ;
     }
 
     & h4 {
@@ -150,7 +150,11 @@ body {
     @apply flex justify-evenly items-center w-full mt-12 mb-6;
 
     & div {
-      @apply flex flex-col justify-center items-center gap-y-4 text-xl;
+      @apply flex flex-col justify-center items-center gap-y-4;
+    }
+
+    & p {
+      @apply text-xl;
     }
 
     & h5 {
@@ -167,11 +171,15 @@ body {
     @apply h-full font-light flex flex-col justify-center items-start;
 
     & h4 {
-      @apply p-8 text-2xl font-medium;
+      @apply p-8 text-3xl font-medium;
     }
 
     & ul {
-      @apply px-4 list-disc text-xl;
+      @apply px-4 list-disc ;
+
+      & li {
+        @apply text-lg;
+      }
     }
   }
 }
