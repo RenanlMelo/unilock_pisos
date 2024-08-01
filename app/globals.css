@@ -49,7 +49,7 @@ body {
 
 /* - Header - */
 .header {
-  @apply grid grid-cols-4 bg-black justify-between items-center px-[3vw] py-[3vh] fixed w-full z-10;
+  @apply grid grid-cols-4 bg-black justify-between items-center px-[3vw] py-[3vh] w-full z-10;
 }
 
 .logo_div {
@@ -115,7 +115,36 @@ body {
 
 /* Serviços */
 .servicos_section {
-  @apply flex  justify-center items-center;
+  @apply w-full h-[100%] flex flex-col justify-evenly items-center;
+
+  & h3 {
+    @apply absolute text-5xl;
+  }
+
+  & .servicos_div {
+    @apply w-[calc(100%-200px)] h-[720px] grid grid-cols-2 grid-rows-4 justify-evenly items-center;
+  }
+
+  & .servicos_div_item:nth-child(even) {
+    @apply flex justify-start items-center w-full h-full;
+  }
+  & .servicos_div_item:nth-child(odd) {
+    @apply flex justify-end items-center w-full h-full;
+  }
+
+  & .servicos_span_white {
+    @apply bg-transparent;
+  }
+  & .servicos_span {
+    @apply bg-[#202020] w-[75%] h-40;
+  }
+  & .servicos_span_big {
+    @apply bg-[#202020] w-[100%] h-40;
+  }
+}
+
+.servicos_logo {
+  @apply w-[720px] aspect-square absolute z-10;
 }
 
 /* Sobre  */
@@ -146,11 +175,15 @@ body {
     }
   }
 
+  & .sobre_dados_bg {
+    @apply w-[100vw] h-96 bg-black;
+  }
+
   & .sobre_dados {
-    @apply flex justify-evenly items-center w-full mt-12 mb-6;
+    @apply flex justify-center gap-x-36 items-center w-full mt-12 mb-6;
 
     & div {
-      @apply flex flex-col justify-center items-center gap-y-4 text-xl;
+      @apply flex flex-col justify-center items-center gap-y-4 text-xl text-white;
     }
 
     & h5 {
@@ -158,7 +191,7 @@ body {
     }
 
     & .sobre_dado_span {
-      @apply rounded-full w-[10vw] aspect-square p-12 bg-white relative flex justify-center items-center;
+      @apply rounded-full w-[10vw] aspect-square p-12 bg-black relative flex justify-center items-center z-10;
       animation: spin 3s all infinite linear;
     }
   }
@@ -192,9 +225,9 @@ body {
 }
 
 .sobre_dado_span::before {
-  @apply rounded-full w-[100%] aspect-square bg-white absolute;
+  @apply rounded-full w-[100%] aspect-square absolute;
   content: "";
-  z-index: -1;
+  z-index: 1;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
   background: conic-gradient(

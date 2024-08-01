@@ -12,6 +12,8 @@ export const Header = () => {
     { name: "Sobre", id: "sobre", href: "sobre" },
   ];
 
+  const const_UrlPath = window.location.href;
+
   return (
     <header className="header">
       <div className="logo_div">

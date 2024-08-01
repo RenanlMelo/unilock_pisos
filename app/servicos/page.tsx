@@ -1,7 +1,12 @@
-import React from 'react'
+import { Header } from "@/components/header/Header";
+import { Servicos } from "@/components/services/Servicos";
+import React from "react";
 
 export default function page() {
   return (
-    <div>page serviços</div>
-  )
+    <>
+      <Header />
+      <Servicos />
+    </>
+  );
 }
