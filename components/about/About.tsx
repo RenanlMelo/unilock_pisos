@@ -5,14 +5,6 @@ export const About = () => {
   return (
     <>
       <section className="sobre_section">
-        {/* <Image
-          src="/image_yellow_logo.png"
-          alt="logo"
-          width={1000}
-          height={1000}
-          className="sobre_logo"
-        /> */}
-
         <div className="sobre_div_title">
           <h3>Sobre Nós</h3>
         </div>
@@ -40,13 +32,13 @@ export const About = () => {
           <div className="sobre_dados">
             <div>
               <span className="sobre_dado_span">
-                <h5>23+</h5>
+                <h5>20+</h5>
               </span>
               <p>Anos no mercado</p>
             </div>
             <div>
               <span className="sobre_dado_span">
-                <h5>1000+</h5>
+                <h5>4000+</h5>
               </span>
               <p> Obras concluidas</p>
             </div>

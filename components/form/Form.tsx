@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export const Form = () => {
+  document.body.style.overflowY = "hidden";
+
   return (
     <>
       <AnimatePresence>
@@ -30,11 +32,11 @@ export const Form = () => {
               <p>
                 Telefone: <strong>(15) 99856-8080</strong>
               </p>
-              <span>
-                Entre em contato conosco pelas redes sociais ou pelo formulário
-                ao lado.
-              </span>
             </div>
+            <span>
+              Entre em contato conosco pelas redes sociais ou pelo formulário ao
+              lado.
+            </span>
             <div className="contato_midia">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
