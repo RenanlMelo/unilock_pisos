@@ -1,12 +1,7 @@
-"use client";
-
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export const Form = () => {
-  document.body.style.overflowY = "hidden";
-
   return (
     <>
       <AnimatePresence>
