@@ -115,14 +115,17 @@ body {
 
 /* Serviços */
 .servicos_section {
-  & .servicos_content {
+  .servicos_content {
     @apply w-full h-full grid justify-center items-center grid-cols-2 grid-rows-6 relative my-32;
+  }
+  .servicos_modelo {
+    @apply w-[90%] h-[90%] min-h-[25vh] flex justify-center items-center text-3xl text-white bg-[#000] relative;
+  }
 
-    & .servicos_modelo {
-      @apply w-[90%] h-[90%] min-h-[25vh] flex justify-center items-center text-3xl text-white bg-[#000] relative;
-    }
-    /* & ::before,
-    ::after {
+  .servicos_modelo:nth-child(odd) {
+    @apply justify-end col-start-1 rounded-r-2xl;
+    &::before,
+    &::after {
       content: "";
       z-index: -1;
       position: absolute;
@@ -139,49 +142,49 @@ body {
         var(--clr-2),
         var(--clr-1)
       );
-    } */
-  }
-
-  & .servicos_modelo:nth-child(even) {
-    @apply justify-start col-start-2 rounded-l-2xl;
-
-    /* & ::before,
-    ::after {
-      content: "";
-      z-index: -1;
-      position: absolute;
-      top: -7px;
-      left: -7px;
-      border-radius: 16px;
-      width: calc(100% + 10px);
-      height: calc(100% + 10px);
-      background: conic-gradient(
-        from 270deg,
-        var(--clr-1),
-        var(--clr-2),
-        var(--clr-3),
-        var(--clr-2),
-        var(--clr-1)
-      );
-    } */
-    & .servicos_modelo:nth-child(odd) {
-      @apply justify-end col-start-1 rounded-r-2xl;
-    }
-
-    & h4 {
-      @apply px-8;
     }
   }
+}
+
+.servicos_modelo:nth-child(even) {
+  @apply justify-start col-start-2 rounded-l-2xl;
+
+  &::before,
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    border-radius: 16px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: conic-gradient(
+      from 270deg,
+      var(--clr-1),
+      var(--clr-2),
+      var(--clr-3),
+      var(--clr-2),
+      var(--clr-1)
+    );
+  }
+}
+.servicos_modelo:nth-child(odd) {
+  @apply justify-end col-start-1 rounded-r-2xl;
+}
+
+h4 {
+  @apply px-8;
 }
 
 .servicos_section {
   @apply w-full h-[100%] flex flex-col justify-evenly items-center;
 
-  & h3 {
+  h3 {
     @apply my-32 text-5xl;
   }
 
-  & .servicos_div {
+  .servicos_div {
     @apply w-[calc(100%-200px)] h-fit grid grid-cols-2 grid-rows-2 justify-center items-center gap-y-24;
   }
 
@@ -191,10 +194,6 @@ body {
 
   & .servicos_div_item:nth-child(odd) {
     @apply flex justify-end items-center w-full h-full;
-
-    & .servicos_span {
-      @apply flex justify-start items-center text-white text-3xl pl-8;
-    }
   }
 
   & .servicos_span_white {
@@ -210,6 +209,10 @@ body {
 
 .servicos_div_item:nth-child(even) .servicos_span {
   @apply flex justify-end items-center text-white text-3xl pr-8 bg-red-700;
+}
+
+.servicos_div_item:nth-child(odd) .servicos_span {
+  @apply flex justify-start items-center text-white text-3xl pl-8;
 }
 
 .servicos_introduction {

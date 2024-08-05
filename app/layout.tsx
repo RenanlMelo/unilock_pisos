@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 
 const mainFontFamily = Roboto({
-  weight: ["100","300","500","700","900"],
+  weight: ["100", "300", "500", "700", "900"],
   subsets: ["latin"],
 });
 
