@@ -86,7 +86,7 @@ body {
 }
 
 .inicio_background_image {
-  @apply bg-contain bg-center absolute h-[100vh];
+  @apply bg-contain bg-center absolute w-full aspect-video;
 }
 
 .inicio_filter {
@@ -115,21 +115,96 @@ body {
 
 /* Serviços */
 .servicos_section {
+  & .servicos_content {
+    @apply w-full h-full grid justify-center items-center grid-cols-2 grid-rows-6 relative my-32;
+
+    .servicos_separador {
+      /* @apply border-b-[15%] border-r-[100%] border border-red-700 w-0 h-0; */
+      border-bottom: 25vh solid #ff99ff;
+    }
+
+    & .servicos_modelo {
+      @apply w-[90%] h-[90%] min-h-[25vh] flex justify-center items-center text-3xl text-white bg-[#000] relative;
+    }
+
+    & .servicos_modelo:nth-child(odd) {
+      @apply justify-end col-start-1 rounded-r-2xl;
+
+      & ::before,
+      ::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        border-radius: 16px;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        background: conic-gradient(
+          from 90deg,
+          var(--clr-1),
+          var(--clr-2),
+          var(--clr-3),
+          var(--clr-2),
+          var(--clr-1)
+        );
+      }
+    }
+
+    & .servicos_modelo:nth-child(even) {
+      @apply justify-start col-start-2 rounded-l-2xl;
+
+      & ::before,
+      ::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: -7px;
+        left: -7px;
+        border-radius: 16px;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        background: conic-gradient(
+          from 270deg,
+          var(--clr-1),
+          var(--clr-2),
+          var(--clr-3),
+          var(--clr-2),
+          var(--clr-1)
+        );
+      }
+    }
+
+    & h4 {
+      @apply px-8;
+    }
+  }
+}
+
+.servicos_section {
   @apply w-full h-[100%] flex flex-col justify-evenly items-center;
 
   & h3 {
-    @apply absolute text-5xl;
+    @apply my-32 text-5xl;
   }
 
   & .servicos_div {
-    @apply w-[calc(100%-200px)] h-[720px] grid grid-cols-2 grid-rows-4 justify-evenly items-center;
+    @apply w-[calc(100%-200px)] h-fit grid grid-cols-2 grid-rows-2 justify-center items-center gap-y-24;
   }
 
   & .servicos_div_item:nth-child(even) {
     @apply flex justify-start items-center w-full h-full;
+
+    & .servicos_span {
+      @apply flex justify-end items-center text-white text-3xl pr-8;
+    }
   }
   & .servicos_div_item:nth-child(odd) {
     @apply flex justify-end items-center w-full h-full;
+
+    & .servicos_span {
+      @apply flex justify-start items-center text-white text-3xl pl-8;
+    }
   }
 
   & .servicos_span_white {
@@ -141,6 +216,10 @@ body {
   & .servicos_span_big {
     @apply bg-[#202020] w-[100%] h-40;
   }
+}
+
+.servicos_introduction {
+  @apply flex justify-center items-center w-full h-full my-24 drop-shadow-[0_0_30px_#200020aa];
 }
 
 .servicos_logo {
@@ -160,7 +239,7 @@ body {
   @apply w-[55%] flex flex-col gap-y-10 justify-center items-center p-8;
 
   & .sobre_texto1 {
-    @apply h-full text-xl font-light flex justify-center items-center;
+    @apply h-full text-xl font-light flex justify-center items-center py-16;
 
     & p {
       @apply px-4;
@@ -176,37 +255,36 @@ body {
   }
 
   & .sobre_dados_bg {
-    @apply w-[100vw] h-96 bg-black;
+    @apply w-[100vw] h-96 bg-black -z-10;
   }
 
   & .sobre_dados {
-    @apply flex justify-center gap-x-36 items-center w-full mt-12 mb-6;
+    @apply flex justify-center gap-x-36 items-center w-full my-12;
 
     & div {
-      @apply flex flex-col justify-center items-center gap-y-4 text-xl text-white;
+      @apply flex flex-col justify-center items-center gap-y-4 text-xl text-[var(--primary)] font-light;
     }
 
     & h5 {
       @apply text-3xl text-[var(--primary-darken)];
     }
-
-    & .sobre_dado_span {
-      @apply rounded-full w-[10vw] aspect-square p-12 bg-black relative flex justify-center items-center z-10;
-      animation: spin 3s all infinite linear;
-    }
   }
 
   & .sobre_texto2 {
-    @apply h-full font-light flex flex-col justify-center items-start;
+    @apply h-full font-light flex flex-col justify-center items-start bg-white py-16;
 
     & h4 {
-      @apply p-8 text-2xl font-medium;
+      @apply p-8 text-4xl font-medium;
     }
 
     & ul {
       @apply px-4 list-disc text-xl;
     }
   }
+}
+
+.sobre_dado_span {
+  @apply rounded-full w-[10vw] aspect-square relative flex justify-center items-center bg-black;
 }
 
 @property --gradient-angle {
@@ -224,10 +302,11 @@ body {
   }
 }
 
-.sobre_dado_span::before {
+.sobre_dado_span::before,
+.sobre_dado_span::after {
   @apply rounded-full w-[100%] aspect-square absolute;
   content: "";
-  z-index: 1;
+  z-index: -1;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
   background: conic-gradient(
