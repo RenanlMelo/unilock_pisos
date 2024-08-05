@@ -187,11 +187,8 @@ body {
 
   & .servicos_div_item:nth-child(even) {
     @apply flex justify-start items-center w-full h-full;
-
-    & .servicos_span {
-      @apply flex justify-end items-center text-white text-3xl pr-8;
-    }
   }
+
   & .servicos_div_item:nth-child(odd) {
     @apply flex justify-end items-center w-full h-full;
 
@@ -209,6 +206,10 @@ body {
   & .servicos_span_big {
     @apply bg-[#202020] w-[100%] h-40;
   }
+}
+
+.servicos_div_item:nth-child(even) .servicos_span {
+  @apply flex justify-end items-center text-white text-3xl pr-8 bg-red-700;
 }
 
 .servicos_introduction {
