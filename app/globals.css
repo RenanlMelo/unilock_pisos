@@ -121,7 +121,7 @@ body {
     & .servicos_modelo {
       @apply w-[90%] h-[90%] min-h-[25vh] flex justify-center items-center text-3xl text-white bg-[#000] relative;
     }
-    & ::before,
+    /* & ::before,
     ::after {
       content: "";
       z-index: -1;
@@ -139,13 +139,13 @@ body {
         var(--clr-2),
         var(--clr-1)
       );
-    }
+    } */
   }
 
   & .servicos_modelo:nth-child(even) {
     @apply justify-start col-start-2 rounded-l-2xl;
 
-    & ::before,
+    /* & ::before,
     ::after {
       content: "";
       z-index: -1;
@@ -163,11 +163,9 @@ body {
         var(--clr-2),
         var(--clr-1)
       );
-    }
+    } */
     & .servicos_modelo:nth-child(odd) {
       @apply justify-end col-start-1 rounded-r-2xl;
-
-      /*  */
     }
 
     & h4 {
