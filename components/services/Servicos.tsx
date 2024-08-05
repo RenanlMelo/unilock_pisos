@@ -57,6 +57,7 @@ export const Servicos = () => {
         <div className="servicos_content">
           {var_dictModelos.map((item, index) => (
             <div
+              key={index}
               className="servicos_modelo"
               style={{ gridRowStart: `${index + 1}` }}
             >
