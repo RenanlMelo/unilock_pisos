@@ -118,61 +118,56 @@ body {
   & .servicos_content {
     @apply w-full h-full grid justify-center items-center grid-cols-2 grid-rows-6 relative my-32;
 
-    .servicos_separador {
-      /* @apply border-b-[15%] border-r-[100%] border border-red-700 w-0 h-0; */
-      border-bottom: 25vh solid #ff99ff;
-    }
-
     & .servicos_modelo {
       @apply w-[90%] h-[90%] min-h-[25vh] flex justify-center items-center text-3xl text-white bg-[#000] relative;
     }
+    & ::before,
+    ::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      border-radius: 16px;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      background: conic-gradient(
+        from 90deg,
+        var(--clr-1),
+        var(--clr-2),
+        var(--clr-3),
+        var(--clr-2),
+        var(--clr-1)
+      );
+    }
+  }
 
+  & .servicos_modelo:nth-child(even) {
+    @apply justify-start col-start-2 rounded-l-2xl;
+
+    & ::before,
+    ::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      border-radius: 16px;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      background: conic-gradient(
+        from 270deg,
+        var(--clr-1),
+        var(--clr-2),
+        var(--clr-3),
+        var(--clr-2),
+        var(--clr-1)
+      );
+    }
     & .servicos_modelo:nth-child(odd) {
       @apply justify-end col-start-1 rounded-r-2xl;
 
-      & ::before,
-      ::after {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        top: 7px;
-        left: 7px;
-        border-radius: 16px;
-        width: calc(100% + 10px);
-        height: calc(100% + 10px);
-        background: conic-gradient(
-          from 90deg,
-          var(--clr-1),
-          var(--clr-2),
-          var(--clr-3),
-          var(--clr-2),
-          var(--clr-1)
-        );
-      }
-    }
-
-    & .servicos_modelo:nth-child(even) {
-      @apply justify-start col-start-2 rounded-l-2xl;
-
-      & ::before,
-      ::after {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        top: -7px;
-        left: -7px;
-        border-radius: 16px;
-        width: calc(100% + 10px);
-        height: calc(100% + 10px);
-        background: conic-gradient(
-          from 270deg,
-          var(--clr-1),
-          var(--clr-2),
-          var(--clr-3),
-          var(--clr-2),
-          var(--clr-1)
-        );
-      }
+      /*  */
     }
 
     & h4 {
