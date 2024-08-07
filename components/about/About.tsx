@@ -7,11 +7,11 @@ export const About = () => {
       <section className="sobre_section">
         <div className="sobre_div_title">
           <h3>Sobre Nós</h3>
+          <h4>Conheça mais sobre a nossa história</h4>
         </div>
         <div className="sobre_div_content">
           <div className="sobre_texto1">
             <div>
-              <h4>Nossa História</h4>
               <p>
                 A Unilock Pisos está a 23 anos no mercado de instalações de
                 pisos intertravados, 10 anos no Sul da Florida (EUA) e agora 13

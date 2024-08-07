@@ -1,21 +1,42 @@
 import Image from "next/image";
-import React from "react";
 
 export const Servicos = () => {
+  const var_dictTipos = [
+    { modelo: "Pisos Intertravados" },
+    { modelo: "Pisos Grama" },
+    { modelo: "Guias e Sarjetas" },
+    { modelo: "Pisos Drenante" },
+  ];
+
   const var_dictModelos = [
-    { modelo: "Modelo 1", imagem: "/image1.png" },
-    { modelo: "Modelo 2", imagem: "/image2.png" },
-    { modelo: "Modelo 3", imagem: "/image3.png" },
-    { modelo: "Modelo 4", imagem: "/image4.png" },
-    { modelo: "Modelo 5", imagem: "/image5.png" },
-    { modelo: "Modelo 6", imagem: "/image6.png" },
+    {
+      modelo: "Pisos Intertravados",
+      imagens: [
+        {
+          imagem1: "/intertravado1.jpg",
+          imagem2: "/intertravado2.jpg",
+          imagem3: "",
+        },
+      ],
+    },
+    {
+      modelo: "Pisos Grama",
+      imagens: [{ imagem1: "" }],
+    },
+    { modelo: "Guias e Sarjetas", imagens: [{ imagem1: "", imagem2: "" }] },
+    {
+      modelo: "Pisos Drenante",
+      imagens: [{ imagem1: "" }],
+    },
   ];
 
   return (
     <>
       <section className="servicos_section">
-        <h3>Serviços Oferecidos</h3>
-
+        <div className="servicos_title">
+          <h3>Serviços Oferecidos</h3>
+          <h4>Conheça mais sobre nossos modelos</h4>
+        </div>
         <div className="servicos_introduction">
           <Image
             className="servicos_logo"
@@ -25,32 +46,13 @@ export const Servicos = () => {
             height={1200}
           />
           <div className="servicos_div">
-            {/* <div className="servicos_div_item">
-              <span className="servicos_span_white"></span>
-            </div> */}
-            <div className="servicos_div_item">
-              <span className="servicos_span">
-                <p>Modelo 1</p>
-              </span>
-            </div>
-            <div className="servicos_div_item">
-              <span className="servicos_span">
-                <p>Modelo 2</p>
-              </span>
-            </div>
-            <div className="servicos_div_item">
-              <span className="servicos_span">
-                <p>Modelo 3</p>
-              </span>
-            </div>
-            <div className="servicos_div_item">
-              <span className="servicos_span">
-                <p>Modelo 4</p>
-              </span>
-            </div>
-            {/* <div className="servicos_div_item">
-              <span className="servicos_span_white"></span>
-            </div> */}
+            {var_dictTipos.map((tipo, index) => (
+              <div key={index} className="servicos_div_tipo">
+                <span className="servicos_span">
+                  <p>{tipo.modelo}</p>
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -61,9 +63,22 @@ export const Servicos = () => {
               className="servicos_modelo"
               style={{ gridRowStart: `${index + 1}` }}
             >
-              <span className="servicos_separador" />
               <h4 className="servicos_modelo_title">{item.modelo}</h4>
-              {/* <Image className="servicos_modelo_image"></Image> */}
+              {/* <div className="servicos_modelo_images">
+                {item.imagens.map((image, imgIndex) =>
+                  Object.values(image).map((imgSrc, subImgIndex) =>
+                    imgSrc ? (
+                      <Image
+                        key={`${imgIndex}-${subImgIndex}`}
+                        src={imgSrc}
+                        alt={`${item.modelo} image ${subImgIndex + 1}`}
+                        width={500}
+                        height={500}
+                      />
+                    ) : null
+                  )
+                )}
+              </div> */}
             </div>
           ))}
         </div>
