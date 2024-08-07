@@ -27,18 +27,14 @@
   --clr-2-opacity: 0.05;
   --clr-3-opacity: 0.01;
   --clr-1: rgb(var(--clr-1-red), var(--clr-1-green), var(--clr-1-blue));
-  --clr-2: rgba(
-    var(--clr-1-red),
-    var(--clr-1-green),
-    var(--clr-1-blue),
-    var(--clr-2-opacity)
-  );
-  --clr-3: rgba(
-    var(--clr-1-red),
-    var(--clr-1-green),
-    var(--clr-1-blue),
-    var(--clr-3-opacity)
-  );
+  --clr-2: rgba(var(--clr-1-red),
+      var(--clr-1-green),
+      var(--clr-1-blue),
+      var(--clr-2-opacity));
+  --clr-3: rgba(var(--clr-1-red),
+      var(--clr-1-green),
+      var(--clr-1-blue),
+      var(--clr-3-opacity));
 }
 
 html,
@@ -49,7 +45,7 @@ body {
 
 /* - Header - */
 .header {
-  @apply grid grid-cols-4 bg-black justify-between items-center px-[3vw] py-[3vh] w-full z-10;
+  @apply grid grid-cols-4 justify-between items-center px-[3vw] py-[3vh] w-full z-50;
 }
 
 .logo_div {
@@ -106,7 +102,7 @@ body {
 }
 
 .inicio_button1 {
-  @apply bg-[var(--primary)] text-lg rounded-md w-[14vw] h-[6vh] border border-transparent text-black hover:text-white hover:bg-[var(--primary-darken)] duration-300 shadow-[0_5px_15px_-7px_var(--primary)] hover:shadow-[0_5px_20px_0px_var(--primary-darken)];
+  @apply bg-[var(--primary)] text-lg rounded-md w-[14vw] h-[6vh] border border-transparent text-black hover:text-white hover:bg-[var(--primary-darken)] duration-300 shadow-[0_5px_15px_-7px_var(--primary)] hover:shadow-[0_5px_20px_0px_var(--primary)];
 }
 
 .inicio_button2 {
@@ -117,33 +113,38 @@ body {
 .servicos_section {
   @apply w-full flex flex-col justify-evenly items-center;
 
-  .servicos_title {
-    @apply mt-32 w-full text-start px-32;
+  .servicos_title_div {
+    @apply mt-[10vh] w-full text-start px-32;
+
 
     h3 {
-      @apply text-6xl font-semibold text-[var(--primary)];
+      @apply text-6xl font-semibold text-[var(--primary)] w-fit p-8 pb-0;
     }
 
     h4 {
-      @apply text-3xl font-light text-[var(--primary-darken)];
+      @apply text-3xl font-light text-[var(--primary-darken)] w-fit p-8 pt-0;
     }
   }
 
   .servicos_introduction {
-    @apply flex justify-center items-center w-full h-full my-24 drop-shadow-[0_0_30px_#200020aa];
+    @apply flex justify-center items-center w-full h-full my-[calc(0vh+20px)] drop-shadow-[0_0_30px_#200020aa];
 
     .servicos_logo {
-      @apply w-[30vw] aspect-square absolute z-10;
+      @apply h-[calc(100%)] w-fit aspect-square absolute z-10;
     }
 
     .servicos_div {
-      @apply w-[calc(100%-200px)] h-fit grid grid-cols-2 grid-rows-2 justify-center items-center gap-y-24;
+      @apply w-[calc(100%-200px)] h-fit grid grid-cols-2 grid-rows-2 justify-center items-center gap-y-[10vh] py-10;
+
+      .servicos_span {
+        @apply bg-[#202020] w-[75%] h-[calc(14vh+75px)];
+      }
 
       .servicos_div_tipo:nth-child(even) {
-        @apply flex justify-start items-center w-full h-full;
+        @apply flex justify-start items-center w-full h-fit;
 
         .servicos_span {
-          @apply flex justify-end items-center text-white text-3xl pr-8;
+          @apply flex justify-end items-center text-white text-[2vw] pr-8;
         }
       }
 
@@ -151,51 +152,46 @@ body {
         @apply flex justify-end items-center w-full h-full;
 
         .servicos_span {
-          @apply flex justify-start items-center text-white text-3xl pl-8;
+          @apply flex justify-start items-center text-white text-[2vw] pl-8;
         }
       }
     }
-  } // fim introduction
+  }
+
+  // fim introduction
 
   .servicos_content {
-    @apply w-full h-full grid grid-cols-2 grid-rows-4 relative my-32;
+    @apply w-full h-full grid grid-cols-2 grid-rows-4 relative my-[15vh];
 
     .servicos_modelo {
-      @apply w-[90%] h-[90%] min-h-[25vh] flex justify-center items-center text-3xl text-white bg-[#000] relative;
+      @apply w-[90%] h-[90%] min-h-[25vh] flex justify-center items-center text-[2vw] text-white bg-[#000] relative;
     }
   }
 }
 
-h4 {
-  @apply px-8;
-}
-
-.servicos_span {
-  @apply bg-[#202020] w-[75%] h-40;
-}
 
 /* Sobre  */
 .sobre_section {
   @apply text-[#000] w-full h-full flex flex-col justify-start items-center;
 
   & .sobre_div_title {
-    @apply w-full h-72 text-center mt-32 flex flex-col justify-center items-center;
+    @apply w-full h-72 text-center mt-[10vh] flex flex-col justify-center items-center;
 
     h3 {
-      @apply text-6xl font-semibold text-[var(--primary)];
+      @apply text-[3vw] font-semibold text-[var(--primary)];
     }
 
     h4 {
-      @apply text-3xl font-light text-[var(--primary-darken)];
+      @apply text-[2vw] font-light text-[var(--primary-darken)];
     }
   }
 }
 
 .sobre_div_content {
-  @apply w-full flex flex-col gap-y-10 justify-center items-center;
+  @apply w-full flex flex-col justify-center items-center;
 
   & .sobre_texto1 {
-    @apply h-full w-[55%] text-xl font-light flex justify-center items-center py-16;
+    @apply h-full w-[calc(55%+50px)] text-xl font-light flex justify-center items-center py-[7.5vh];
 
     & p {
       @apply px-4;
@@ -207,14 +203,14 @@ h4 {
   }
 
   & .sobre_dados_bg {
-    @apply w-full h-96 bg-black -z-10;
+    @apply w-full bg-[#101010] -z-10;
   }
 
   & .sobre_dados {
-    @apply flex justify-center gap-x-36 items-center w-full my-12;
+    @apply flex justify-center gap-x-36 items-center w-full my-[10vh];
 
     & div {
-      @apply flex flex-col justify-center items-center gap-y-4 text-xl text-[var(--primary)] font-light;
+      @apply flex flex-col justify-center items-center gap-y-4 text-[1.75vw] text-[var(--primary)] font-light;
     }
 
     & h5 {
@@ -223,20 +219,20 @@ h4 {
   }
 
   & .sobre_texto2 {
-    @apply h-full w-[55%] font-light flex flex-col justify-center items-start bg-white py-16;
+    @apply h-full p-4 w-[calc(55%+50px)] font-light flex flex-col justify-center items-start bg-white my-[10vh] px-[5vw] border-2 border-black/30 rounded-3xl;
 
     & h4 {
-      @apply p-8 text-4xl font-medium;
+      @apply p-8 text-[2.25vw] font-medium;
     }
 
     & ul {
-      @apply px-4 list-disc text-xl;
+      @apply p-4 pt-0 list-disc text-[1.5vw] font-light;
     }
   }
 }
 
 .sobre_dado_span {
-  @apply rounded-full w-[10vw] aspect-square relative flex justify-center items-center bg-black;
+  @apply rounded-full w-[10vw] aspect-square relative flex justify-center items-center bg-[#101010];
 }
 
 @property --gradient-angle {
@@ -249,6 +245,7 @@ h4 {
   0% {
     --gradient-angle: 0deg;
   }
+
   100% {
     --gradient-angle: 360deg;
   }
@@ -261,21 +258,20 @@ h4 {
   z-index: -1;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
-  background: conic-gradient(
-    from var(--gradient-angle),
-    var(--clr-1),
-    var(--clr-2),
-    var(--clr-3),
-    var(--clr-2),
-    var(--clr-1)
-  );
+  background: conic-gradient(from var(--gradient-angle),
+      var(--clr-1),
+      var(--clr-2),
+      var(--clr-3),
+      var(--clr-2),
+      var(--clr-1));
   animation: spin 6s linear infinite;
   border-radius: 50%;
+  filter: blur(10px)
 }
 
 /* Contato */
 .contato_section {
-  @apply flex justify-center items-center w-full h-full overflow-hidden;
+  @apply flex justify-center items-center overflow-hidden relative;
 }
 
 .contato_bg_image {
@@ -286,8 +282,12 @@ h4 {
   @apply w-full h-full absolute aspect-video bg-blue-500/10 shadow-custom-double;
 }
 
+.contato_content {
+  @apply grid grid-cols-2 my-[10vh] justify-center items-center w-[80vw];
+}
+
 .contato_informations {
-  @apply bg-[#101010] grid grid-rows-3 border border-black/50 border-r-0 justify-between items-start w-[calc(25%+100px)] h-2/3 p-12 gap-y-4 rounded-l-2xl z-10 relative;
+  @apply bg-[#101010] grid col-start-1 grid-rows-3 border translate-y-10 border-black/50 border-r-0 justify-between items-start h-full p-12 gap-y-4 rounded-l-2xl z-10 relative;
 
   & h3 {
     @apply text-[1.5vw] text-white max-w-full whitespace-nowrap;
@@ -303,7 +303,7 @@ h4 {
 }
 
 .contato_informations span {
-  @apply text-white/70 h-full w-full flex justify-center items-center text-3xl row-start-2;
+  @apply text-white/70 h-full w-full flex justify-center items-center text-[2vw] row-start-2;
 }
 
 .contato_midia {
@@ -318,6 +318,7 @@ h4 {
     fill: #25de66;
     transition: 0.5s all;
   }
+
   & svg:nth-child(2):hover {
     fill: #3b5998;
     transition: 0.5s all;
@@ -329,7 +330,7 @@ h4 {
 }
 
 .contato_form {
-  @apply w-[calc(30%+50px)] h-2/3 flex flex-col gap-y-10 justify-center items-center rounded-r-2xl px-24 z-10 border border-black/50 border-l-0 backdrop-blur;
+  @apply translate-y-10 flex flex-col gap-y-[7.5vh] justify-center items-center rounded-r-2xl p-[10vh] z-10 border border-black/50 border-l-0 backdrop-blur;
 }
 
 .contato_smaller_form {

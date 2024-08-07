@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+
+  const currentPath = usePathname()
+
   const navbarItems = [
     { name: "Início", id: "inicio", href: "/" },
     { name: "Serviços", id: "servicos", href: "servicos" },
@@ -13,7 +16,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className="header">
+    <header className={`header ${currentPath === '/' || currentPath === '/contato' ? 'bg-transparent absolute' : 'bg-[#101010]'}`}>
       <div className="logo_div">
         <Image
           src="/logo.png"

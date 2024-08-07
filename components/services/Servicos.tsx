@@ -33,9 +33,11 @@ export const Servicos = () => {
   return (
     <>
       <section className="servicos_section">
-        <div className="servicos_title">
-          <h3>Serviços Oferecidos</h3>
-          <h4>Conheça mais sobre nossos modelos</h4>
+        <div className="servicos_title_div">
+            <h3>Serviços Oferecidos
+
+              <h4>Conheça mais sobre nossos modelos</h4>
+            </h3>
         </div>
         <div className="servicos_introduction">
           <Image

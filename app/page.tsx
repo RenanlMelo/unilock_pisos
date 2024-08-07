@@ -17,12 +17,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="h-[100vh] flex flex-col justify-between items-center bg-[#fff]">
+    <main className="h-[100vh] w-full flex flex-col justify-between items-center bg-[#fff] relative">
       <Header />
       <Inicio />
-      {/* <Servicos /> */}
-      {/* <Carousel /> */}
-      {/* <ClientsCarousel /> */}
     </main>
   );
 }
