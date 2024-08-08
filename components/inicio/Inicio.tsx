@@ -13,6 +13,7 @@ export const Inicio = () => {
           height={1080}
           className="inicio_background_image"
           loading="eager"
+          priority={true}
         />
         <span className="inicio_filter" />
         <div className="inicio_shadow" />

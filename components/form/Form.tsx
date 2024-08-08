@@ -14,6 +14,7 @@ export const Form = () => {
             alt="imagem de fundo"
             width={1920}
             height={1080}
+            priority={true}
           />
           <span className="contato_filter" />
           <div className="contato_content">

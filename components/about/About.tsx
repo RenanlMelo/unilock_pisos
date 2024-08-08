@@ -27,6 +27,7 @@ export const About = () => {
               width={400}
               height={400}
               className="sobre_image"
+              priority={true}
             />
           </div>
 

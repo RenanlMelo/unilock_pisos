@@ -27,22 +27,18 @@
   --clr-2-opacity: 0.05;
   --clr-3-opacity: 0.01;
   --clr-1: rgb(var(--clr-1-red), var(--clr-1-green), var(--clr-1-blue));
-  --clr-2: rgba(
-    var(--clr-1-red),
-    var(--clr-1-green),
-    var(--clr-1-blue),
-    var(--clr-2-opacity)
-  );
-  --clr-3: rgba(
-    var(--clr-1-red),
-    var(--clr-1-green),
-    var(--clr-1-blue),
-    var(--clr-3-opacity)
-  );
+  --clr-2: rgba(var(--clr-1-red),
+      var(--clr-1-green),
+      var(--clr-1-blue),
+      var(--clr-2-opacity));
+  --clr-3: rgba(var(--clr-1-red),
+      var(--clr-1-green),
+      var(--clr-1-blue),
+      var(--clr-3-opacity));
 }
 
 body {
-  background: url("/texture.png");
+  background: url("/image_texture.png");
 }
 
 // ANIMATIONS
@@ -141,11 +137,11 @@ body {
 }
 
 .inicio_button1 {
-  @apply bg-[var(--primary)] text-lg rounded-md w-[14vw] h-[6vh] border border-transparent text-black hover:text-white hover:bg-[var(--primary-darken)] duration-300 shadow-[0_5px_15px_-7px_var(--primary)] hover:shadow-[0_5px_20px_0px_var(--primary)];
+  @apply bg-[var(--primary)] text-lg rounded-md w-[calc(14vw+100px)] h-[calc(6vh+10px)] border border-transparent text-black hover:text-white hover:bg-[var(--primary-darken)] duration-300 shadow-[0_5px_15px_-7px_var(--primary)] hover:shadow-[0_5px_20px_0px_var(--primary)];
 }
 
 .inicio_button2 {
-  @apply border border-white/70 text-lg rounded-md w-[14vw] h-[6vh] text-white/70 hover:text-[var(--text-f)] hover:border-[var(--white-f)] duration-300 shadow-[0_5px_30px_-5px_var(--white-f-50)] hover:shadow-[0_5px_20px_-7px_var(--white-f)];
+  @apply border border-white/70 text-lg rounded-md w-[calc(14vw+100px)] h-[calc(6vh+10px)] text-white/70 hover:text-[var(--text-f)] hover:border-[var(--white-f)] duration-300 shadow-[0_5px_30px_-5px_var(--white-f-70)] hover:shadow-[0_5px_20px_-7px_var(--white-f)];
 }
 
 /* Serviços */
@@ -156,7 +152,7 @@ body {
     @apply my-[calc(10vh-50px)] w-full text-start px-32;
 
     h3 {
-      @apply text-[3vw] font-semibold text-[var(--text-dark1)] w-fit p-8 pb-0;
+      @apply text-[3vw] font-semibold text-[var(--text-dark1)] w-fit p-8 pl-0 pb-0;
     }
 
     h4 {
@@ -202,29 +198,52 @@ body {
     @apply w-full h-full grid grid-rows-4 relative mt-[10vh];
 
     .servicos_modelo {
-      @apply w-full flex flex-col justify-center items-center relative;
+      @apply w-full flex flex-col justify-center items-center relative py-12;
 
-      h4:nth-child(1) {
-        @apply mt-0;
+      div {
+        margin-bottom: 5vh;
       }
 
       h4 {
-        @apply text-[2vw] mt-[calc(10vh+50px)] mb-[5vh];
+        @apply text-[calc(1.75vw+10px)] text-center;
+      }
+
+      span {
+        @apply flex justify-evenly items-center w-full text-[1.5vw] gap-x-4;
+      }
+
+      .servicos_availableColour {
+        @apply rounded-full flex m-0 w-8 aspect-square;
       }
 
       .servicos_modelo_images {
-        @apply flex justify-evenly items-center w-full;
+        @apply flex flex-col justify-evenly items-center w-full m-0;
+
+        div:nth-child(1) {
+          @apply w-full flex justify-evenly items-center;
+        }
+        div:nth-child(2) {
+          @apply w-full flex justify-evenly items-center;
+
+          p {
+            @apply w-1/4 text-center text-[calc(2vw-10px)]
+          }
+        }
 
         img {
-          @apply w-1/4 aspect-square rounded-full shadow-[3px_4px_30px_#10001090];
+          @apply w-1/4 aspect-square rounded-full shadow-[3px_4px_30px_#10001060];
           transition: 0.35s all;
         }
 
         img:hover {
           filter: brightness(50%);
           transition: 0.35s all;
-          box-shadow: 4px 5px 40px #100010bb;
+          box-shadow: 4px 5px 40px #10001080;
         }
+      }
+
+      .servicos_division {
+        @apply bg-[#242424] w-[80%] h-px
       }
     }
   }
@@ -235,10 +254,10 @@ body {
   @apply text-[#000] w-full h-full flex flex-col justify-start items-center;
 
   & .sobre_div_title {
-    @apply w-full h-72 text-center my-[calc(10vh-50px)] flex flex-col justify-center items-center;
+    @apply w-full text-start px-32 my-[calc(10vh-50px)];
 
     h3 {
-      @apply text-[3vw] font-semibold text-[var(--text-dark1)] p-8 py-0;
+      @apply text-[3vw] font-semibold text-[var(--text-dark1)] p-8 pl-0 pb-0;
     }
 
     h4 {
@@ -251,7 +270,7 @@ body {
   @apply w-full flex flex-col justify-center items-center;
 
   .sobre_texto1 {
-    @apply h-full w-[calc(55%+50px)] text-xl font-light flex justify-center items-center pb-[7.5vh];
+    @apply h-full w-[calc(55%+50px)] text-[calc(.95vw+5px)] font-light flex justify-center items-center pb-[7.5vh];
 
     p {
       @apply rounded-xl p-4 backdrop-blur;
@@ -270,7 +289,7 @@ body {
     }
 
     ul {
-      @apply p-4 pt-0 list-disc text-[calc(1.5vw-5px)] font-light;
+      @apply p-4 pt-0 list-disc text-[calc(.95vw+5px)] font-light;
     }
   }
 }
@@ -305,14 +324,12 @@ body {
   z-index: -1;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
-  background: conic-gradient(
-    from var(--gradient-angle),
-    var(--clr-1),
-    var(--clr-2),
-    var(--clr-3),
-    var(--clr-2),
-    var(--clr-1)
-  );
+  background: conic-gradient(from var(--gradient-angle),
+      var(--clr-1),
+      var(--clr-2),
+      var(--clr-3),
+      var(--clr-2),
+      var(--clr-1));
   animation: spin 6s linear infinite;
   border-radius: 50%;
   filter: blur(10px);
