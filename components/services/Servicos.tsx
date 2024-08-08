@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export const Servicos = () => {
@@ -15,29 +17,40 @@ export const Servicos = () => {
         {
           imagem1: "/intertravado1.jpg",
           imagem2: "/intertravado2.jpg",
-          imagem3: "",
+          imagem3: "/intertravado2.jpg",
+        },
+      ],
+      nomes: [
+        {
+          nome1: "10x20",
+          nome2: "16 faces",
+          nome3: "20x20",
         },
       ],
     },
     {
       modelo: "Pisos Grama",
-      imagens: [{ imagem1: "" }],
+      imagens: [{ imagem1: "/pisoGrama.jpg" }],
     },
-    { modelo: "Guias e Sarjetas", imagens: [{ imagem1: "", imagem2: "" }] },
+    {
+      modelo: "Guias e Sarjetas",
+      imagens: [{ imagem1: "", imagem2: "" }],
+      nomes: [{ nome1: "Guias", nome2: "Sarjeta" }],
+    },
     {
       modelo: "Pisos Drenante",
       imagens: [{ imagem1: "" }],
     },
   ];
 
+  const handleHover = () => {};
+
   return (
     <>
       <section className="servicos_section">
         <div className="servicos_title_div">
-            <h3>Serviços Oferecidos
-
-              <h4>Conheça mais sobre nossos modelos</h4>
-            </h3>
+          <h3>Serviços Oferecidos</h3>
+          <h4>Conheça mais sobre nossos modelos</h4>
         </div>
         <div className="servicos_introduction">
           <Image
@@ -65,12 +78,13 @@ export const Servicos = () => {
               className="servicos_modelo"
               style={{ gridRowStart: `${index + 1}` }}
             >
-              <h4 className="servicos_modelo_title">{item.modelo}</h4>
-              {/* <div className="servicos_modelo_images">
+              <h4>{item.modelo}</h4>
+              <div className="servicos_modelo_images">
                 {item.imagens.map((image, imgIndex) =>
                   Object.values(image).map((imgSrc, subImgIndex) =>
                     imgSrc ? (
                       <Image
+                        onMouseEnter={() => handleHover()}
                         key={`${imgIndex}-${subImgIndex}`}
                         src={imgSrc}
                         alt={`${item.modelo} image ${subImgIndex + 1}`}
@@ -80,7 +94,7 @@ export const Servicos = () => {
                     ) : null
                   )
                 )}
-              </div> */}
+              </div>
             </div>
           ))}
         </div>

@@ -27,17 +27,25 @@
   --clr-2-opacity: 0.05;
   --clr-3-opacity: 0.01;
   --clr-1: rgb(var(--clr-1-red), var(--clr-1-green), var(--clr-1-blue));
-  --clr-2: rgba(var(--clr-1-red),
-      var(--clr-1-green),
-      var(--clr-1-blue),
-      var(--clr-2-opacity));
-  --clr-3: rgba(var(--clr-1-red),
-      var(--clr-1-green),
-      var(--clr-1-blue),
-      var(--clr-3-opacity));
+  --clr-2: rgba(
+    var(--clr-1-red),
+    var(--clr-1-green),
+    var(--clr-1-blue),
+    var(--clr-2-opacity)
+  );
+  --clr-3: rgba(
+    var(--clr-1-red),
+    var(--clr-1-green),
+    var(--clr-1-blue),
+    var(--clr-3-opacity)
+  );
 }
 
-// ANIMATIONS 
+body {
+  background: url("/texture.png");
+}
+
+// ANIMATIONS
 @property --gradient-angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -73,7 +81,6 @@
     --gradient-angle: 360deg;
   }
 }
-
 
 /* - Header - */
 .header {
@@ -148,7 +155,6 @@
   .servicos_title_div {
     @apply my-[calc(10vh-50px)] w-full text-start px-32;
 
-
     h3 {
       @apply text-[3vw] font-semibold text-[var(--text-dark1)] w-fit p-8 pb-0;
     }
@@ -169,7 +175,7 @@
       @apply w-[calc(100%-200px)] h-fit grid grid-cols-2 grid-rows-2 justify-center items-center gap-y-[10vh] py-10;
 
       .servicos_span {
-        @apply bg-[#202020] w-[75%] h-[calc(14vh+75px)] text-[var(--text-primary)] flex items-center text-[2vw];
+        @apply bg-[#202020] w-[75%] h-[calc(14vh+50px)] text-[var(--text-primary)] flex items-center text-[2vw];
       }
 
       .servicos_div_tipo:nth-child(even) {
@@ -193,14 +199,36 @@
   // fim introduction
 
   .servicos_content {
-    @apply w-full h-full grid grid-cols-2 grid-rows-4 relative my-[15vh];
+    @apply w-full h-full grid grid-rows-4 relative mt-[10vh];
 
     .servicos_modelo {
-      @apply w-[90%] h-[90%] min-h-[25vh] flex justify-center items-center text-[2vw] text-white bg-[#000] relative;
+      @apply w-full flex flex-col justify-center items-center relative;
+
+      h4:nth-child(1) {
+        @apply mt-0;
+      }
+
+      h4 {
+        @apply text-[2vw] mt-[calc(10vh+50px)] mb-[5vh];
+      }
+
+      .servicos_modelo_images {
+        @apply flex justify-evenly items-center w-full;
+
+        img {
+          @apply w-1/4 aspect-square rounded-full shadow-[3px_4px_30px_#10001090];
+          transition: 0.35s all;
+        }
+
+        img:hover {
+          filter: brightness(50%);
+          transition: 0.35s all;
+          box-shadow: 4px 5px 40px #100010bb;
+        }
+      }
     }
   }
 }
-
 
 /* Sobre  */
 .sobre_section {
@@ -210,7 +238,7 @@
     @apply w-full h-72 text-center my-[calc(10vh-50px)] flex flex-col justify-center items-center;
 
     h3 {
-      @apply text-[3vw] font-semibold text-[var(--text-dark1)] p-8 pb-0;
+      @apply text-[3vw] font-semibold text-[var(--text-dark1)] p-8 py-0;
     }
 
     h4 {
@@ -223,10 +251,10 @@
   @apply w-full flex flex-col justify-center items-center;
 
   .sobre_texto1 {
-    @apply h-full w-[calc(55%+50px)] text-xl font-light flex justify-center items-center py-[7.5vh];
+    @apply h-full w-[calc(55%+50px)] text-xl font-light flex justify-center items-center pb-[7.5vh];
 
     p {
-      @apply px-4;
+      @apply rounded-xl p-4 backdrop-blur;
     }
 
     .sobre_image {
@@ -238,11 +266,11 @@
     @apply h-full p-4 w-[calc(55%+50px)] font-light flex flex-col justify-center items-start bg-white my-[10vh] px-[5vw] border-2 border-black/30 rounded-3xl;
 
     h4 {
-      @apply p-8 text-[2.25vw] font-medium;
+      @apply p-8 text-[calc(2.35vw-12px)] font-medium;
     }
 
     ul {
-      @apply p-4 pt-0 list-disc text-[1.5vw] font-light;
+      @apply p-4 pt-0 list-disc text-[calc(1.5vw-5px)] font-light;
     }
   }
 }
@@ -257,38 +285,38 @@
       @apply flex flex-col justify-center items-center gap-y-4 text-[1.75vw] text-[var(--primary)] font-light;
 
       .sobre_dado_span {
-        @apply rounded-full z-50 w-[13vw] aspect-square relative flex justify-center items-center bg-[#101010] shadow-sobre_circles;
+        @apply rounded-full w-[13vw] aspect-square relative flex justify-center items-center bg-[#101010];
 
-        animation: rotate 8s linear infinite;
+        // animation: rotate 8s linear infinite;
 
         h5 {
-          @apply text-3xl text-[var(--primary-darken)];
-          animation: rotate_negative 8s linear infinite;
+          @apply text-[2vw] text-[var(--primary-darken)];
+          // animation: rotate_negative 8s linear infinite;
         }
       }
     }
   }
 }
 
-
-// .sobre_dado_span::before,
-// .sobre_dado_span::after {
-//   @apply rounded-full w-[100%] aspect-square absolute;
-//   content: "";
-//   z-index: -51;
-//   width: calc(100% + 10px);
-//   height: calc(100% + 10px);
-//   background: conic-gradient(from var(--gradient-angle),
-//       var(--clr-1),
-//       var(--clr-2),
-//       var(--clr-3),
-//       var(--clr-2),
-//       var(--clr-1));
-//   animation: spin 6s linear infinite;
-//   border-radius: 50%;
-//   filter: blur(10px)
-// }
-
+.sobre_dado_span::before,
+.sobre_dado_span::after {
+  @apply rounded-full w-[100%] aspect-square absolute;
+  content: "";
+  z-index: -1;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1)
+  );
+  animation: spin 6s linear infinite;
+  border-radius: 50%;
+  filter: blur(10px);
+}
 
 /* Contato */
 .contato_section {
@@ -321,8 +349,6 @@
       @apply text-[var(--primary)];
     }
   }
-
-
 }
 
 .contato_informations span {
