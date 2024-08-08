@@ -140,7 +140,7 @@ export const Servicos = () => {
                     Object.values(nome).map((nomeSrc) =>
                       nomeSrc ? (
 
-                        <p>{nomeSrc}</p>
+                        <p key={nomeIndex} >{nomeSrc}</p>
                       ) : null
                     ))}
                 </div>
