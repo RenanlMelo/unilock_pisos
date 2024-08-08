@@ -7,7 +7,7 @@ export const Inicio = () => {
     <>
       <div className="inicio_div">
         <Image
-          src="/image_bg.jpeg"
+          src="/image_inicio_bg.jpeg"
           alt="background image"
           width={1920}
           height={1080}

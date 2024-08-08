@@ -19,7 +19,7 @@ export const Header = () => {
     <header className={`header ${currentPath === '/' || currentPath === '/contato' ? 'bg-transparent absolute' : 'bg-[#101010]'}`}>
       <div className="logo_div">
         <Image
-          src="/logo.png"
+          src="/image_main_logo.png"
           alt="logo"
           width={200}
           height={200}

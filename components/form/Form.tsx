@@ -65,7 +65,7 @@ export const Form = () => {
               </div>
               <Image
                 className="contato_logo"
-                src="/logo_form.png"
+                src="/image_dark_logo-50.png"
                 alt="Logo"
                 width={1000}
                 height={1000}
