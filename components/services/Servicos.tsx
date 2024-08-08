@@ -15,7 +15,7 @@ export const Servicos = () => {
       modelo: "Pisos Intertravados",
       imagens: [
         {
-          imagem1: "/image_image_intertravado1.jpg",
+          imagem1: "/image_intertravado1.jpg",
           imagem2: "/image_intertravado2.jpg",
           imagem3: "/image_intertravado2.jpg",
         },
