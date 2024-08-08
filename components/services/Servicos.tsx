@@ -15,9 +15,9 @@ export const Servicos = () => {
       modelo: "Pisos Intertravados",
       imagens: [
         {
-          imagem1: "/intertravado1.jpg",
-          imagem2: "/intertravado2.jpg",
-          imagem3: "/intertravado2.jpg",
+          imagem1: "/image_image_intertravado1.jpg",
+          imagem2: "/image_intertravado2.jpg",
+          imagem3: "/image_intertravado2.jpg",
         },
       ],
       nomes: [
@@ -35,7 +35,7 @@ export const Servicos = () => {
     },
     {
       modelo: "Pisos Grama",
-      imagens: [{ imagem1: "/pisoGrama.jpg" }],
+      imagens: [{ imagem1: "/image_piso_grama.jpg" }],
       nomes: [
         {
           nome1: "Piso Grama",
@@ -49,7 +49,7 @@ export const Servicos = () => {
     },
     {
       modelo: "Guias e Sarjetas",
-      imagens: [{ imagem1: "/intertravado1.jpg", imagem2: "/intertravado1.jpg" }],
+      imagens: [{ imagem1: "/image_intertravado1.jpg", imagem2: "/image_intertravado1.jpg" }],
       nomes: [{ nome1: "Guias", nome2: "Sarjeta" }],
       cores: [{
         cor1: "bg-red-600",
@@ -59,7 +59,7 @@ export const Servicos = () => {
     },
     {
       modelo: "Pisos Drenante",
-      imagens: [{ imagem1: "/intertravado1.jpg" }],
+      imagens: [{ imagem1: "/image_intertravado1.jpg" }],
       nomes: [{ nome1: "Piso Drenante" }],
       cores: [{
         cor1: "bg-red-600",
