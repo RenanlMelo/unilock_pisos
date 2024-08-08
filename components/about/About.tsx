@@ -6,8 +6,9 @@ export const About = () => {
     <>
       <section className="sobre_section">
         <div className="sobre_div_title">
-          <h3>Sobre Nós</h3>
-          <h4>Conheça mais sobre a nossa história</h4>
+          <h3>Sobre Nós
+            <h4>Conheça mais sobre a nossa história</h4>
+          </h3>
         </div>
         <div className="sobre_div_content">
           <div className="sobre_texto1">

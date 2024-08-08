@@ -1,5 +1,5 @@
 import { Header } from "@/components/header/Header";
-import { Inicio } from "./inicio/Inicio";
+import { Inicio } from "../components/inicio/Inicio";
 import { Servicos } from "@/components/services/Servicos";
 
 import type { Metadata } from "next";
